@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CalculadoraCientifica.Models.Operacion>
+@{
+   ViewData["Title"] = "Historial de Operaciones";
+}
+
+<div class="row contenedor-row d-flex justify-content-center">
+   <h1 class="text-center text-light">@ViewData["Title"]</h1>
+   <div class="container">
+      <div class="mask d-flex align-items-center">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-12">
+                  <div class="card card-table" style="border-radius: 0.6rem;">
+                     <div class="container-border p-2 rounded">
+                        <div class="card-body card-body-table">
+                           <div class="table-responsive">
+                              <table class="table historial-table text-center">
+                                 <thead>
+                                    <tr class="text-light">
+                                       <th scope="col">
+                                          <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" value="" id="checkAll" />
+                                          </div>
+                                       </th>
+                                       <th scope="col">Operación</th>
+                                       <th scope="col">Resultado</th>
+                                       <th scope="col">Fecha</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                       <tr class="text-light">
+                                          <th scope="row">
+                                             <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="@item.Id" onclick="this.blur()" />
+                                             </div>
+                                          </th>
+                                          <td>@item.Expresion</td>
+                                          <td>@item.Resultado</td>
+                                          <td>@item.FechaHora</td>
+                                       </tr>
+                                    }
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="container d-flex justify-content-end" style="padding-right: 1rem">
+                              <button type="button" class="btn btn-danger px-3 historial-button mt-3">
+                                 Eliminar
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+@section Scripts{
+   <script src="~/js/Historial.js"></script>
+}
