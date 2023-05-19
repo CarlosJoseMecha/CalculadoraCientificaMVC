@@ -1,0 +1,66 @@
+﻿@using CalculadoraMVC.Models.ViewModels;
+@model EditUserViewModel
+
+<main class="text-light">
+   <div class="py-3 text-center">
+      <h2>Editar Usuario</h2>
+   </div>
+   @using (Html.BeginForm("EditOnPost", "Role"))
+   {
+      @Html.HiddenFor(h => @Model.User.Id)
+      ;
+      <div class="row container-fluid justify-content-center">
+         <div class="col-6">
+            <div class="row">
+               <div class="col-12">
+                  <label asp-for="@Model.User.FirstName" class="form-label">Nombre</label>
+                  <input asp-for="@Model.User.FirstName" class="form-control" autocomplete="username" aria-required="true" />
+                  <span asp-validation-for="@Model.User.FirstName" class="text-danger">
+                  </span>
+               </div>
+
+               <div class="col-12">
+                  <label asp-for="@Model.User.LastName" class="form-label">Apellidos</label>
+                  <input asp-for="@Model.User.LastName" class="form-control" autocomplete="username" aria-required="true" />
+                  <span asp-validation-for="@Model.User.LastName" class="text-danger">
+                  </span>
+               </div>
+
+               <div class="col-12">
+                  <label asp-for="@Model.User.Email" class="form-label"></label>
+                  <div class="input-group has-validation">
+                     <span class="input-group-text"></span>
+                     <input asp-for="@Model.User.Email" class="form-control" autocomplete="username" aria-required="true" />
+                     <span asp-validation-for="@Model.User.Email" class="text-danger">
+                     </span>
+                  </div>
+               </div>
+            </div>
+
+            <hr class="my-4">
+
+            <h4 class="mb-3">Roles</h4>
+
+            @for (int i = 0; i < Model.Roles.Count(); i++)
+            {
+               <div class="form-check">
+                  @Html.CheckBoxFor(c => Model.Roles[i].Selected)
+                  @Html.HiddenFor(h => Model.Roles[i].Name, new { })
+                  @Html.LabelFor(h => Model.Roles[i].Selected, Model.Roles[i].Name, new { @class = "form-check-label" })
+                  @Html.HiddenFor(h => Model.Roles[i].Name)
+               </div>
+            }
+
+            <div class="my-3">
+            </div>
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg mb-3" type="submit">Guardar</button>
+         </div>
+      </div>
+   }
+
+</main>
+
+

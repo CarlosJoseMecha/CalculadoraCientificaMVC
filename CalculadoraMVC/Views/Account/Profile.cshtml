@@ -1,0 +1,121 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@{
+   var user = await UserManager.GetUserAsync(User);
+}
+<div class="row contenedor-row d-flex justify-content-center">
+   <div class="container container-border p-2 rounded">
+      <div class="container py-3 profile-container text-light">
+         <div class="row">
+            <div class="col-lg-4 mt-1">
+               <div class="card mb-3 h-100">
+                  <div class="d-flex flex-column align-items-center justify-content-center card-body profile-card text-center  h-100">
+                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                          class="rounded-circle img-fluid" style="width: 150px;">
+                     <h5 class="my-3">@User?.Identity?.Name</h5>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-8">
+               <div class="card mb-3">
+                  <div class="card-body profile-card">
+                     <div class="row">
+                        <div class="col-sm-3">
+                           <p class="mb-0">Nombre</p>
+                        </div>
+                        <div class="col-sm-9">
+                           <p class=" mb-0">@ViewData["FirstName"]</p>
+                        </div>
+                     </div>
+                     <hr> <div class="row">
+                        <div class="col-sm-3">
+                           <p class="mb-0">Apellidos</p>
+                        </div>
+                        <div class="col-sm-9">
+                           <p class=" mb-0">@ViewData["LastName"]</p>
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="row">
+                        <div class="col-sm-3">
+                           <p class="mb-0">Email</p>
+                        </div>
+                        <div class="col-sm-9">
+                           <p class="text mb-0">@ViewData["Email"]</p>
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="row">
+                        <div class="col-sm-3">
+                           <p class="mb-0">Contraseña</p>
+                        </div>
+                        <div class="col-sm-9">
+                           <p class="text mb-0">*********</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="container col-md-12">
+                     <div class="card mb-4 mb-md-0">
+                        <div class="card-body profile-card">
+                           <div class="row">
+                              <div class="col-6">
+                                 <p class="mb-0 mt-1">Eliminar cuenta</p>
+                              </div>
+                              <div class="col-6">
+                                 <p class="d-flex mb-0 justify-content-end">
+                                    <button type="button" class="btn btn-danger  eliminar-cuenta-button" data-bs-toggle="modal" data-bs-target="#deleteAccount">
+                                       Eliminar
+                                       <svg style="height:0.8rem; width:0.8rem; margin:0rem 0rem 0.15rem 0.30rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" /></svg>
+                                    </button>
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteAccount" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="deleteAccountLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar cuenta</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+            ¿Estás seguro de que quieres eliminar tu cuenta?, esta acción es irreversible.
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary eliminar-cuenta-button" data-bs-dismiss="modal">No</button>
+            <button type="button" id="eliminar-cuenta-button" class="btn btn-danger eliminar-cuenta-button">Si, eliminar cuenta</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+@section Scripts{
+   <script>
+      $(document).ready(function () {
+         $("#eliminar-cuenta-button").click(function () {
+            $.ajax({
+               url: "/Account/DeleteAccount",
+               type: "POST",
+               success: function () {
+                  location.reload();
+               },
+               error: function () {
+                  alert("No se pudo eliminar la cuenta. Por favor, intenta de nuevo más tarde.");
+               }
+            });
+         });
+      });
+   </script>
+   }

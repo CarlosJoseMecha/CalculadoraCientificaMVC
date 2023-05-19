@@ -1,0 +1,282 @@
+* {
+   outline: none;
+   outline-offset: 0;
+   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   background: none;
+   border: none;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   background-color: #222 !important;
+   font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+   font-size: 16px;
+   margin: 0;
+}
+
+.footer {
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+}
+
+/*CALC*/
+.contenedor-row {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 95vh !important;
+}
+
+.wrapper {
+   background-color: #616161;
+   display: flex;
+   flex-direction: column;
+   padding: 1rem;
+   border-radius: 1rem;
+   width: auto;
+}
+
+#display {
+   background-color: #333;
+   display: flex;
+   max-width: 300px;
+   flex-direction: column;
+   align-items: end;
+   justify-content: flex-end;
+   padding-right: 1.25rem;
+   border: 1px solid #000;
+   padding: 0.5rem;
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+#display1 {
+   min-height: 1.76rem;
+   font-size: 1rem;
+}
+
+#display2 {
+   font-size: 1.2rem;
+}
+
+.calc-table {
+   border-collapse: separate;
+   border-spacing: 0.25rem;
+   padding-top: 0.6rem;
+}
+
+.openParenthesis {
+   vertical-align: text-bottom;
+   font-size: 0.875rem;
+   margin-top: 1rem;
+   margin-inline-start: 0.2rem;
+}
+
+.closeParenthesis {
+   vertical-align: text-bottom;
+   font-size: 0.875rem;
+   margin-top: 1rem;
+   margin-inline-end: 0.2rem;
+}
+
+.calc-button {
+   width: 4.25rem;
+   height: 2rem;
+   background-color: #444;
+   color: #fff;
+   font-size: 1.125rem;
+   cursor: pointer;
+   border: 1px solid #000;
+   border-radius: 0.25rem;
+   box-shadow: #141414 0 0.125rem 0 0;
+   box-sizing: border-box;
+   text-align: center;
+}
+
+sub {
+   margin-top: 1rem;
+   vertical-align: text-bottom;
+   font-size: 0.875rem;
+}
+
+.deleteIcon {
+   fill: #fff;
+}
+
+.function {
+   background-color: #ff8c00;
+}
+
+.redButton {
+   background-color: #ff4545;
+}
+
+#changeSign {
+   background-color: #444;
+}
+
+#buttonSolve {
+   background-color: rgb(28, 132, 192);
+   width: 8.875rem;
+}
+
+   #buttonSolve:hover {
+      background-color: rgb(63, 155, 209);
+   }
+
+#changeSign:hover {
+   background-color: #555;
+}
+
+.function:hover {
+   background-color: #ffa73b;
+}
+
+.redButton:hover {
+   background-color: #ff5c5c;
+}
+
+.calc-button:hover {
+   background-color: #555;
+}
+
+button:active {
+   box-shadow: none;
+   transform: translate(2px, 2px);
+}
+
+/*LOGIN - REGISTER*/
+.form-signin {
+   width: 100%;
+   max-width: 430px;
+   padding: 1rem;
+   margin: auto;
+   display: flex;
+   justify-content: center;
+}
+
+   .form-signin .checkbox {
+      font-weight: 400;
+   }
+
+   .form-signin .form-floating:focus-within {
+      z-index: 2;
+   }
+
+.form-container {
+   background-color: #616161 !important;
+   /*   border-radius: 1rem;*/
+   border: 1px solid #000;
+}
+
+.container-border {
+   background-color: #333333;
+   border: 1px solid #000;
+}
+
+.card-table {
+   border: 1px solid #fff !important;
+}
+
+.card-body-table {
+   background-color: #555555;
+   border: 1px solid #000 !important;
+}
+
+.social-icon {
+   height: 1.5rem;
+   width: 1.5rem;
+}
+
+.btn-login {
+   cursor: pointer;
+   border: 1px solid #000;
+   border-radius: 4px;
+   box-shadow: #141414 0 2px 0 0;
+}
+
+.btn-register {
+   cursor: pointer;
+   border: 1px solid #000;
+   border-radius: 4px;
+   box-shadow: #141414 0 2px 0 0;
+}
+/*HISTOY*/
+
+.historial-button {
+   color: #fff;
+   cursor: pointer;
+   border: 1px solid #000;
+   border-radius: 4px;
+   box-shadow: #141414 0 2px 0 0;
+   box-sizing: border-box;
+   margin-left: 0.5rem;
+}
+
+   .historial-button:focus {
+      outline: none;
+      box-shadow: none;
+   }
+
+   .historial-button:active {
+      box-shadow: none;
+      transform: translate(2px, 2px);
+   }
+
+/*PROFILE*/
+
+.profile-container {
+   background-color: #616161;
+   max-width: 70vw;
+   border: 1px solid #000 !important;
+}
+
+.card {
+   border: none !important;
+}
+
+.profile-card {
+   background-color: #555555;
+   border: 1px solid #000 !important;
+}
+
+img {
+   border: 1px solid #000;
+}
+
+.eliminar-cuenta-button {
+   cursor: pointer;
+   border: 1px solid #000;
+   border-radius: 4px;
+   box-shadow: #141414 0 2px 0 0;
+}
+
+/*ADMIN*/
+.table-row {
+   height: 2.6rem;
+}
+
+
+/*NO IMPLEMENTADO*/
+.section-not-implemented {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 600;
+   font-size: 1.25rem;
+   color: rgba(0, 0, 0, 0.5);
+   height: 200px;
+   border: 4px dashed #ffffff;
+   border-radius: 20px;
+   gap: 1rem;
+}

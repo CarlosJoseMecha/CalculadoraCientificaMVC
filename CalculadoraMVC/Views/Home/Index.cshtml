@@ -1,0 +1,214 @@
+﻿@{
+   ViewData["Title"] = "Home Page";
+}
+
+<row class="contenedor-row d-flex justify-content-center">
+   <div class="wrapper">
+      <div id="display" class="text-light">
+         <div id="display1">&nbsp;</div>
+         <div id="display2">&nbsp;</div>
+      </div>
+      <table class="calc-table">
+         <!-- 1st row -->
+         <tr>
+            <td>
+               <button class="calc-button" type="button" data-value="AC">AC</button>
+            </td>
+            <td>
+               <button type="button" class="value calc-button" data-value="(">
+                  (
+               </button>
+            </td>
+            <td>
+               <button type="button" class="value calc-button" data-value=")">
+                  )
+               </button>
+            </td>
+            <td>
+               <button class="calc-button" type="button" data-value="C" title="borrar">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 96 960 960" width="38" class="deleteIcon">
+                     <path d="m448 730 112-112 112 112 43-43-113-111 111-111-43-43-110 112-112-112-43 43 113 111-113 111 43 43ZM120 576l169-239q13-18 31-29.5t40-11.5h420q24.75 0 42.375 17.625T840 356v440q0 24.75-17.625 42.375T780 856H360q-22 0-40-11.5T289 815L120 576Zm75 0 154 220h431V356H349L195 576Zm585 0V356v440-220Z" />
+                  </svg>
+               </button>
+            </td>
+         </tr>
+         <!-- 2nd row -->
+         <tr>
+            <td>
+               <button type="button" class="function redButton calc-button" data-value="PI">π</button>
+            </td>
+            <td>
+               <button type="button" class="function btnOper redButton calc-button" data-value="e">
+                  e
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function redButton calc-button" data-value="PHI">φ</button>
+            </td>
+            <td>
+               <button type="button" class="function redButton calc-button" data-value="TAU">
+                  τ
+               </button>
+            </td>
+         </tr>
+         <!-- 3rd row -->
+         <tr>
+            <td>
+               <button type="button" class="function btnOper redButton calc-button" data-value="deg">
+                  deg
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function btnOper redButton calc-button" data-value="cos">
+                  cos
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function btnOper redButton calc-button" data-value="sin">
+                  sin
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function btnOper redButton calc-button" data-value="tan">
+                  tan
+               </button>
+            </td>
+         </tr>
+         <!-- 4th row -->
+         <tr>
+            <td>
+               <button type="button" class="function calc-button" data-value="log10">
+                  log
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function calc-button" data-value="log">
+                  ln
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function calc-button" data-value="log2">
+                  log<sub>2</sub>
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function calc-button" data-value="!">
+                  !
+               </button>
+            </td>
+
+         </tr>
+         <!-- 5th row -->
+         <tr>
+            <td>
+               <button type="button" class="function calc-button" data-value="sqrt">
+                  √
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function calc-button" data-value="^2">
+                  x²
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function calc-button" data-value="^3">
+                  x³
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function calc-button" data-value="^">^</button>
+            </td>
+         </tr>
+         <!-- 6th row -->
+         <tr>
+            <td>
+               <button type="button" class="value calc-button" data-value="7">7</button>
+            </td>
+            <td>
+               <button type="button" class="value calc-button" data-value="8">8</button>
+            </td>
+            <td>
+               <button type="button" class="value calc-button" data-value="9">9</button>
+            </td>
+            <td>
+               <button type="button" class="value btnOper redButton calc-button" data-value="/">
+                  ÷
+               </button>
+            </td>
+         </tr>
+         <!-- 7th row -->
+         <tr>
+            <td>
+               <button type="button" class="value calc-button" data-value="4">4</button>
+            </td>
+            <td>
+               <button type="button" class="value calc-button" data-value="5">5</button>
+            </td>
+            <td>
+               <button type="button" class="value calc-button" data-value="6">6</button>
+            </td>
+            <td>
+               <button type="button" class="value btnOper redButton calc-button" data-value="*">
+                  x
+               </button>
+            </td>
+         </tr>
+         <!-- 8th row -->
+         <tr>
+            <td>
+               <button type="button" class="value calc-button" data-value="1">1</button>
+            </td>
+            <td>
+               <button type="button" class="value calc-button" data-value="2">2</button>
+            </td>
+            <td>
+               <button type="button" class="value calc-button" data-value="3">3</button>
+            </td>
+            <td>
+               <button class="value btnOper redButton calc-button" data-value="-">-</button>
+            </td>
+         </tr>
+         <!-- 9th row -->
+         <tr>
+            <td>
+               <button type="button" class="value calc-button" data-value="0">0</button>
+            </td>
+            <td>
+               <button type="button" class="value calc-button" data-value=".">
+                  .
+               </button>
+            </td>
+            <td>
+               <button type="button" class="value calc-button" data-value="CE">
+                  CE
+               </button>
+            </td>
+            <td>
+               <button type="button" class="value btnOper redButton calc-button" data-value="+">
+                  +
+               </button>
+            </td>
+         </tr>
+         <!-- 10th row -->
+         <tr>
+            <td>
+               <button type="button" class="function btnOper redButton calc-button" data-value="rand">
+                  Rand
+               </button>
+            </td>
+            <td>
+               <button type="button" class="function btnOper redButton calc-button" data-value="ans">
+                  Ans
+               </button>
+            </td>
+            <td colspan="2">
+               <button class="calc-button" id="buttonSolve" type="button" data-value="=">=</button>
+            </td>
+         </tr>
+      </table>
+   </div>
+</row>
+
+@section Scripts {
+   <script src="~/js/Calc.js" asp-append-version="true"></script>
+}
