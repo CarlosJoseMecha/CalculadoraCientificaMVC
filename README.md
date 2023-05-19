@@ -1,5 +1,5 @@
 # Calculadora MVC
-![Captura de la vista Home](/imagesGit/calc.png)
+![Captura de la vista Home](/img/calc.png)
 
 Este es un proyecto de una calculadora implementada utilizando el patrón de diseño Modelo-Vista-Controlador (MVC) en .NET Core 6. Proporciona una funcionalidad completa de cálculo y seguimiento de historial de operaciones para cada usuario. Además, se utiliza el sistema de autenticación y autorización de ASP.NET Core Identity para gestionar la creación de usuarios y las validaciones de formulario. 
 
